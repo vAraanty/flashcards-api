@@ -33,7 +33,11 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+gem "rack-cors"
+
+# GraphQL
+gem "graphql"
+gem "graphql-batch"
 
 group :development do
   gem "ruby-lsp"
