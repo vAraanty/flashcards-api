@@ -7,11 +7,12 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3001" # Add your frontend URL here
+    origins Rails.application.credentials.cors[:allowed_origins] || []
 
     resource "*",
       headers: :any,
       methods: [ :get, :post, :put, :patch, :delete, :options, :head ],
+      expose: [ "Authorization" ],
       credentials: true
   end
 end
